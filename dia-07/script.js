@@ -4,7 +4,8 @@ const escolha = {
   multiplicacao: (a, b) => a * b,
   divisao: (a, b) => {
     if ( b === 0 ){
-      return "Divisão por zero não é permitido"
+      alert("Divisão por zero não é permitido")
+      return
     } return a / b
   },
 }
@@ -17,11 +18,12 @@ while (continuar) {
   if(escolha.hasOwnProperty(escolher)){
     let num1 = parseFloat(prompt("Digite o primeiro número:"))
     let num2 = parseFloat(prompt("Digite o segundo número:"))
-    let resultado = escolha[escolher](num1, num2)
-    alert(`Resultado: ${resultado}`)
+    let resultado 
+    = escolha[escolher](num1, num2)
+    alert(`O resultado da ${escolher} é ${resultado}`)
   } else if ( escolha === 'sair') {
     alert('Até a próxima!')
-    continuar = false
+    break
   } else {
     alert('Escolha uma operação válida.')
   }
